@@ -13,6 +13,9 @@ app.use(bodyParser.urlencoded({ limit: "30mb", extended: true}));
 app.use(cors());
 
 app.use('/recipes', postRoutes);
+app.get('/', (req, res) => {
+    res.send('Helloooooooo to recipe api');
+})
 
 const CONNECTION_URL = 'mongodb+srv://shanda:shanda@cluster0.x963p.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
 const PORT = process.env.PORT || 5000;
